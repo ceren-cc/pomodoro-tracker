@@ -20,6 +20,8 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("POMODORO TRACKER")
 
+        self.stackedWidget.setCurrentIndex(0)
+
         # Parameters
         self.work = True                     # True: Work               False: Break
         self.pauseButton = False             # True: time stopped       False: time goes on
@@ -45,14 +47,14 @@ class MainWindow(QMainWindow):
         self.timer = QTimer()
         self.timer.timeout.connect(self.updateCountdown)
 
-        self.pauseOrContinueButton.clicked.connect(self.pauseContinue)
+        self.pauseOrPlayButton.clicked.connect(self.pausePlay)
 
         self.byeButton.clicked.connect(self.closeApp)
 
 
-        # Adding an icon to the Pause/Continue button
-        self.pauseOrContinueButton.setIcon(QIcon("timer_pause.png"))
-        self.pauseOrContinueButton.setIconSize(QSize(60, 60))
+        # Adding an icon to the Pause/Play button
+        self.pauseOrPlayButton.setIcon(QIcon("timer_pause.png"))
+        self.pauseOrPlayButton.setIconSize(QSize(60, 60))
 
 
         # Add sound
@@ -99,7 +101,7 @@ class MainWindow(QMainWindow):
 
         if self.work == True:
             self.workOrBreak.setText("WORK")
-            self.pauseOrContinueButton.show()
+            self.pauseOrPlayButton.show()
 
             self.stackedWidget.setStyleSheet("""
             color: rgb(255, 255, 255);
@@ -132,7 +134,7 @@ class MainWindow(QMainWindow):
             self.remainingSeconds = self.remainingMinutes * 60
         else:
             self.workOrBreak.setText("BREAK")
-            self.pauseOrContinueButton.hide()
+            self.pauseOrPlayButton.hide()
 
             self.stackedWidget.setStyleSheet("""
             background-color: rgb(166, 164, 238)
@@ -203,19 +205,19 @@ class MainWindow(QMainWindow):
             else:
                 self.goToWorkBreakPage()
 
-    def pauseContinue(self):
+    def pausePlay(self):
         if self.pauseButton == False:
             self.timer.stop()
             
-            self.pauseOrContinueButton.setIcon(QIcon("timer_play.png"))
-            self.pauseOrContinueButton.setIconSize(QSize(60, 60))
+            self.pauseOrPlayButton.setIcon(QIcon("timer_play.png"))
+            self.pauseOrPlayButton.setIconSize(QSize(60, 60))
 
             self.pauseButton = True
         else:
             self.timer.start(1000)
 
-            self.pauseOrContinueButton.setIcon(QIcon("timer_pause.png"))
-            self.pauseOrContinueButton.setIconSize(QSize(60, 60))
+            self.pauseOrPlayButton.setIcon(QIcon("timer_pause.png"))
+            self.pauseOrPlayButton.setIconSize(QSize(60, 60))
 
             self.pauseButton = False
 
