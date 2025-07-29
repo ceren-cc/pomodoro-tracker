@@ -4,7 +4,6 @@ import sys
 
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtCore import QUrl
-# (ding) Sound Effect by <a href="https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=47489">freesound_community</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=47489">Pixabay</a>
 # (ukelele) Sound Effect by <a href="https://pixabay.com/users/dominique_garnier-43933898/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=334693">Dominique GARNIER</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=334693">Pixabay</a>
 from PyQt6.QtCore import QTimer
 
