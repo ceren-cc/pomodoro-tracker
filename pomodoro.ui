@@ -856,7 +856,7 @@ padding-top: 10px</string>
          </widget>
         </item>
         <item row="11" column="0">
-         <widget class="QPushButton" name="pauseOrContinueButton">
+         <widget class="QPushButton" name="pauseOrPlayButton">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
