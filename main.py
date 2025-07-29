@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
         # Let's Connect the Button Signals
         self.startButton.clicked.connect(self.goToSelectPomodoroPage)
 
-        self.pom_25_5.clicked.connect(lambda: self.goToChooseHowManySessionPage(1, 1))
+        self.pom_25_5.clicked.connect(lambda: self.goToChooseHowManySessionPage(25, 5))
         self.pom_45_15.clicked.connect(lambda: self.goToChooseHowManySessionPage(45, 15))
         self.pom_60_15.clicked.connect(lambda: self.goToChooseHowManySessionPage(60, 15))
         self.pom_90_30.clicked.connect(lambda: self.goToChooseHowManySessionPage(90, 30))
